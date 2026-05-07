@@ -256,6 +256,10 @@ section{padding:64px 4%}
 .photo-note{margin-top:18px;background:var(--nvpal);border:1px solid var(--bdnv);border-radius:10px;padding:16px 18px;font-size:13px;color:var(--mid);line-height:1.7}
 .photo-note strong{color:var(--nv);font-weight:800}
 
+
+.energy-location-brand{background:#fff;border:1px solid var(--bd2);border-radius:8px;padding:10px 12px;margin-bottom:12px;max-width:260px;box-shadow:var(--shadow-sm)}
+.energy-location-brand img{display:block;width:100%;height:auto;object-fit:contain}
+
 /* === LOCATION === */
 #location{background:var(--lt2);border-top:1px solid var(--bd2);border-bottom:1px solid var(--bd2)}
 .loc-layout{display:grid;grid-template-columns:1fr;gap:24px;margin-top:28px}
@@ -354,6 +358,16 @@ section{padding:64px 4%}
 .cl-svc-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
 .cl-svc-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
 
+
+.energy-brand-card{display:flex;align-items:center;gap:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px;margin-bottom:22px;max-width:760px}
+.energy-brand-logo{background:#fff;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.18);flex-shrink:0;width:190px;min-height:74px}
+.energy-brand-logo img{display:block;width:100%;height:auto;object-fit:contain}
+.energy-brand-text h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;margin-bottom:6px}
+.energy-brand-text p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;margin:0}
+.form-note{font-size:12px;color:var(--mu);line-height:1.6;margin-top:12px;text-align:center}
+.form-note a{color:var(--nv);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:640px){.energy-brand-card{flex-direction:column;align-items:flex-start}.energy-brand-logo{width:100%;max-width:260px}.site-logo-img{height:38px;max-width:178px}}
+
 /* === FOOTER === */
 footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 .ft-top{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:40px}
@@ -445,6 +459,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
     <li><a href="#photos">Photos</a></li>
     <li><a href="#location">Location</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="terms.html">Terms</a></li>
     <li><a href="#contact" class="nav-cta-d">Reserve a Unit</a></li>
   </ul>
   <button class="hbg" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
@@ -459,6 +474,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
   <a href="#photos" onclick="closeMenu()">Photos</a>
   <a href="#location" onclick="closeMenu()">Location</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="terms.html" onclick="closeMenu()">Terms of Service</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="#contact" class="dcta" onclick="closeMenu()">Reserve a Unit &rarr;</a>
 </nav>
@@ -732,6 +748,9 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
     <div class="photo-feature">
       <img src="Images/domtor-energy-building.jpg" alt="DOMTOR Energy building at 840 Grand Lake Road in Sydney, Nova Scotia" loading="lazy">
       <div class="photo-caption">
+        <div class="energy-location-brand">
+          <img src="Images/domtor-energy-logo.png" alt="DOMTOR Energy Services &amp; Consulting logo" loading="lazy">
+        </div>
         <h3>DOMTOR Energy &amp; Storage Location</h3>
         <p>The DOMTOR Energy building is located in the same parking lot as the drive-up storage units, making the facility easy to identify from Grand Lake Road.</p>
       </div>
@@ -827,6 +846,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
           <div class="fg"><label for="notes">Additional Details</label><textarea id="notes" name="message" placeholder="What are you storing? Any questions for us?"></textarea></div>
           <div id="formMsg"></div>
           <button type="submit" class="fsub" id="submitBtn">Reserve a Unit</button>
+          <p class="form-note">By submitting this form, you agree to the DOMTOR Storage <a href="terms.html">Terms of Service</a>.</p>
         </form>
       </div>
     </div>
@@ -890,6 +910,13 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 <!-- CROSSLINK -->
 <section id="crosslink">
   <div class="cl-badge">Part of the DOMTOR Family</div>
+  <div class="energy-brand-card">
+    <div class="energy-brand-logo"><img src="Images/domtor-energy-logo.png" alt="DOMTOR Energy Services &amp; Consulting logo" loading="lazy"></div>
+    <div class="energy-brand-text">
+      <h3>DOMTOR Energy Services &amp; Consulting</h3>
+      <p>DOMTOR Storage is operated alongside our local energy services company at the same Grand Lake Road location.</p>
+    </div>
+  </div>
   <h2>Also from DOMTOR: <em>Energy Services &amp; Consulting</em></h2>
   <p class="ss">DOMTOR Storage is part of DOMTOR Energy Services and Consulting, Cape Breton's locally owned energy services company. We help homeowners access significant rebates through Efficiency Nova Scotia programs.</p>
   <div class="cl-services">
@@ -924,6 +951,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
       <li><a href="#photos">Facility Photos</a></li>
       <li><a href="#location">Location &amp; Directions</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
       <li><a href="#contact">Reserve a Unit</a></li>
     </ul></div>
     <div class="ft-col"><h5>Contact</h5><ul>
