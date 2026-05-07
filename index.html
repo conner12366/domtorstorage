@@ -7,7 +7,7 @@
 <meta name="description" content="Drive-up self storage units in Sydney, Nova Scotia from $149.99 every 4 weeks. 24/7 security cameras. 4 unit sizes. Serving Sydney, Glace Bay, North Sydney, New Waterford & all of Cape Breton. Cape Breton owned. Call (902) 317-6984.">
 <meta name="keywords" content="self storage Sydney NS, storage units Sydney Nova Scotia, self storage Cape Breton, drive up storage Sydney, storage units Glace Bay NS, storage units North Sydney NS, storage units New Waterford NS, storage units Sydney Mines NS, affordable storage Cape Breton, secure storage Sydney NS, storage facility Grand Lake Road Sydney, mini storage Cape Breton, storage units CBRM, Cape Breton storage rental, self storage near me Sydney NS">
 <meta name="author" content="DOMTOR Energy Services and Consulting Inc.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://www.domtorstorage.com/">
 <meta name="geo.region" content="CA-NS">
 <meta name="geo.placename" content="Sydney, Nova Scotia, Cape Breton">
@@ -905,19 +905,40 @@ document.getElementById('storageForm').addEventListener('submit',async function(
 });
 </script>
 <script>
-function checkPW(){
-  var v=document.getElementById('pw-input').value;
-  var err=document.getElementById('pw-err');
-  if(v==='Mishka'){
-    document.getElementById('pw-gate').style.display='none';
-    err.style.display='none';
-  }else{
-    err.style.display='block';
-    document.getElementById('pw-input').value='';
-    document.getElementById('pw-input').focus();
+(function(){
+  const PASSWORD = 'Mishka';
+  const gate = document.getElementById('pw-gate');
+  const input = document.getElementById('pw-input');
+  const err = document.getElementById('pw-err');
+
+  function unlockSite(){
+    gate.style.display = 'none';
+    err.style.display = 'none';
+    document.body.style.overflow = '';
+    sessionStorage.setItem('domtorStorageAccess', 'granted');
   }
-}
-document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPW();});
+
+  window.checkPW = function(){
+    if(input.value === PASSWORD){
+      unlockSite();
+    }else{
+      err.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  };
+
+  if(sessionStorage.getItem('domtorStorageAccess') === 'granted'){
+    gate.style.display = 'none';
+  }else{
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ input.focus(); }, 150);
+  }
+
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter') checkPW();
+  });
+})();
 </script>
 </body>
 </html>
