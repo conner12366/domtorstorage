@@ -354,6 +354,22 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 .ft-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .fbadge{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:4px 10px}
 
+
+/* === PROMO PRICING FOCUS === */
+.unit-price{display:flex;align-items:flex-end;gap:8px;margin:10px 0 8px}
+.unit-price .promo-main{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;line-height:.95;color:#117a24;letter-spacing:-.04em}
+.unit-price .per{font-size:14px;font-weight:800;color:var(--dk2);padding-bottom:5px}
+.unit-price .reg-label{display:block;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:5px}
+.unit-price .reg-old{font-size:12px;color:var(--mu);text-decoration:line-through;font-weight:700}
+.unit-promo{justify-content:space-between;background:transparent;border:0;padding:0;margin:0 0 14px;gap:12px}
+.unit-promo-text{display:inline-block;background:#2f8f43;color:#fff!important;border-radius:4px;padding:4px 10px;font-size:10px!important;letter-spacing:.08em;text-transform:uppercase}
+.discount-pill{background:linear-gradient(180deg,#14922c,#08731b);color:#fff;border-radius:5px;padding:9px 14px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;white-space:nowrap;box-shadow:0 3px 10px rgba(8,115,27,.22)}
+.unit-regular{font-size:12px;color:var(--mu);margin-bottom:18px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.unit-regular s{color:var(--dk2);font-weight:800;text-decoration-thickness:2px}
+.version-footer{background:var(--nvdk);border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:14px 4% calc(14px + env(safe-area-inset-bottom))}
+@media(min-width:900px){.hero{padding:64px 4% 56px}.hero-inner{grid-template-columns:minmax(0,1fr) minmax(420px,.9fr);align-items:center;gap:56px}.hero-content{padding-bottom:0}.hero-cards{align-self:center;margin-top:40px}.hero-card-row{box-shadow:0 14px 36px rgba(0,0,0,.18)}}
+@media(max-width:640px){.unit-price .promo-main{font-size:36px}.discount-pill{font-size:12px;padding:8px 10px}}
+
 /* === RESPONSIVE === */
 @media(min-width:560px){.fg-row{grid-template-columns:1fr 1fr}.sg-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:640px){.units-grid{grid-template-columns:1fr 1fr}.feat-grid{grid-template-columns:1fr 1fr}.serve-grid{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(4,1fr)}.why-grid{grid-template-columns:1fr 1fr}}
@@ -361,6 +377,14 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 @media(min-width:900px){.photo-layout{grid-template-columns:1.15fr .85fr}.photo-feature img{height:520px}.photo-grid{grid-template-columns:1fr 1fr}.nav-links{display:flex;align-items:center;list-style:none;gap:24px}.nav-links li a{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--dk2);letter-spacing:.01em;transition:color .2s}.nav-links li a:hover{color:var(--nv)}.nav-cta-d{display:inline-block;background:var(--gd);color:var(--nv);padding:9px 18px;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;transition:background .2s}.nav-cta-d:hover{background:var(--gdlt)}.hbg{display:none}.mob-bar{display:none}.h-btns{flex-direction:row}.hero-inner{grid-template-columns:1fr 1fr}.hero-cards{display:block}.hero-content{padding-bottom:80px}}
 @media(min-width:1100px){section{padding:96px 5%}.units-grid{grid-template-columns:repeat(4,1fr)}.feat-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:repeat(3,1fr)}.contact-layout{grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}.ft-top{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}.cl-services{grid-template-columns:repeat(4,1fr)}}
 @media(hover:hover){.unit-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--nv)}.unit-card.feat:hover{transform:translateY(-3px)}}
+
+/* Final desktop hero layout fix: keeps the unit cards beside the headline instead of dropping low/right */
+@media(min-width:900px){
+  .hero{padding:64px 4% 56px!important}
+  .hero-inner{grid-template-columns:minmax(0,1fr) minmax(420px,.9fr)!important;align-items:center!important;gap:56px!important}
+  .hero-content{padding-bottom:0!important}
+  .hero-cards{display:block!important;align-self:center!important;margin-top:40px!important}
+}
 #pw-gate{position:fixed;inset:0;background:var(--nv);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
 #pw-box{background:#fff;border-radius:10px;padding:40px 32px;width:100%;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.35)}
 #pw-box .pw-logo{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;letter-spacing:.06em;color:var(--nv);margin-bottom:4px}
@@ -536,8 +560,9 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
         </div>
       </div>
       <div class="unit-body">
-        <div class="unit-price">$149.99 <span class="per">/ 4 wks</span></div>
-        <div class="unit-promo"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span class="unit-promo-text">Promo: first 8 weeks at $74.99 &mdash; 50% off</span></div>
+        <div class="unit-promo"><span class="unit-promo-text">Special Promo</span><span class="discount-pill">50% OFF</span></div>
+        <div class="unit-price"><span class="promo-main">$74.99</span> <span class="per">/ 4 wks</span></div>
+        <div class="unit-regular">Regular Price <s>$149.99</s> / 4 wks</div>
         <p class="unit-desc">Closet-sized unit. Perfect for stacked totes, boxes, sports gear, and smaller household items. Practical and affordable for seasonal or ongoing storage.</p>
         <div class="unit-features">
           <div class="uf"><div class="uf-dot"></div>Drive-up access</div>
@@ -556,8 +581,9 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
         </div>
       </div>
       <div class="unit-body">
-        <div class="unit-price">$159.99 <span class="per">/ 4 wks</span></div>
-        <div class="unit-promo"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span class="unit-promo-text">Promo: first 8 weeks at $79.99 &mdash; 50% off</span></div>
+        <div class="unit-promo"><span class="unit-promo-text">Special Promo</span><span class="discount-pill">50% OFF</span></div>
+        <div class="unit-price"><span class="promo-main">$79.99</span> <span class="per">/ 4 wks</span></div>
+        <div class="unit-regular">Regular Price <s>$159.99</s> / 4 wks</div>
         <p class="unit-desc">A step up for more household overflow, business supplies, or stacked belongings. Pull right up and unload without hauling items through hallways.</p>
         <div class="unit-features">
           <div class="uf"><div class="uf-dot"></div>Drive-up access</div>
@@ -577,8 +603,9 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
         <div class="unit-badge">Most Popular</div>
       </div>
       <div class="unit-body">
-        <div class="unit-price">$199.99 <span class="per">/ 4 wks</span></div>
-        <div class="unit-promo"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span class="unit-promo-text">Promo: first 8 weeks at $99.99 &mdash; 50% off</span></div>
+        <div class="unit-promo"><span class="unit-promo-text">Special Promo</span><span class="discount-pill">50% OFF</span></div>
+        <div class="unit-price"><span class="promo-main">$99.99</span> <span class="per">/ 4 wks</span></div>
+        <div class="unit-regular">Regular Price <s>$199.99</s> / 4 wks</div>
         <p class="unit-desc">The size of a standard bedroom. Comfortably fits the full contents of a one-bedroom apartment including furniture, appliances, and multiple boxes. The most booked size in Sydney.</p>
         <div class="unit-features">
           <div class="uf"><div class="uf-dot"></div>Drive-up access</div>
@@ -598,8 +625,9 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
         <div class="unit-badge gd-badge">Largest</div>
       </div>
       <div class="unit-body">
-        <div class="unit-price">$299.99 <span class="per">/ 4 wks</span></div>
-        <div class="unit-promo"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span class="unit-promo-text">Promo: first 8 weeks at $149.99 &mdash; 50% off</span></div>
+        <div class="unit-promo"><span class="unit-promo-text">Special Promo</span><span class="discount-pill">50% OFF</span></div>
+        <div class="unit-price"><span class="promo-main">$149.99</span> <span class="per">/ 4 wks</span></div>
+        <div class="unit-regular">Regular Price <s>$299.99</s> / 4 wks</div>
         <p class="unit-desc">Single-car garage sized. Holds the contents of a multi-bedroom home, business inventory, equipment, or recreational items like ATVs and motorcycles. Maximum flexibility.</p>
         <div class="unit-features">
           <div class="uf"><div class="uf-dot gd"></div>Drive-up access</div>
@@ -921,6 +949,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
     <div class="ft-badges"><div class="fbadge">Cape Breton Owned</div><div class="fbadge">24/7 Cameras</div><div class="fbadge">Drive-Up Access</div><div class="fbadge">Sydney NS</div></div>
   </div>
 </footer>
+<div class="version-footer">Website Version: v0.1.0 &bull; Development Preview</div>
 
 <script>
 function toggleMenu(){const d=document.getElementById('navDrawer');const h=document.getElementById('hamburger');const o=d.classList.toggle('open');h.classList.toggle('open');h.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';}
