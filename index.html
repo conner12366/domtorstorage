@@ -50,6 +50,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--wh);border-
 .logo-text{font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;letter-spacing:.02em}
 .logo-text .d{color:var(--nv)}.logo-text .r{color:var(--gd)}
 .logo-sub{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:3px}
+.logo-img-wrap{display:flex;align-items:center;justify-content:center;height:54px;max-width:210px}
+.site-logo-img{height:44px;width:auto;max-width:210px;display:block;object-fit:contain}
 .nav-links{display:none}.nav-cta-d{display:none}
 .hbg{background:none;border:none;padding:8px;display:flex;flex-direction:column;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .hbg span{display:block;width:24px;height:2px;background:var(--dk);border-radius:2px;transition:transform .3s,opacity .3s}
@@ -127,6 +129,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--wh);border-
 .tb{display:flex;align-items:center;gap:8px;padding:0 20px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
 .tb svg{width:13px;height:13px;fill:var(--gdlt);flex-shrink:0}
 .tb-sep{width:1px;height:18px;background:rgba(255,255,255,.12);flex-shrink:0}
+
+
+/* === BRAND BANNER === */
+.brand-banner-section{background:var(--lt2);padding:44px 4%;border-top:1px solid var(--bd2);border-bottom:1px solid var(--bd2)}
+.brand-banner-wrap{max-width:1500px;margin:0 auto}
+.brand-banner-img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:var(--shadow-lg);border:1px solid var(--bd2)}
+@media(max-width:640px){.brand-banner-section{padding:28px 4%}.brand-banner-img{border-radius:10px}}
 
 /* === SECTION COMMON === */
 section{padding:64px 4%}
@@ -410,9 +419,8 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 
 <!-- NAV -->
 <nav id="mainnav">
-  <a href="#" class="logo" aria-label="DOMTOR Storage home">
-    <div class="logo-text"><span class="d">DOM</span><span class="r">TOR</span></div>
-    <div class="logo-sub">Self Storage &bull; Sydney, NS</div>
+  <a href="#" class="logo logo-img-wrap" aria-label="DOMTOR Storage home">
+    <img src="Images/domtor-storage-logo.png" alt="DOMTOR Storage" class="site-logo-img">
   </a>
   <ul class="nav-links" role="navigation" aria-label="Main navigation">
     <li><a href="#units">Units &amp; Pricing</a></li>
@@ -431,6 +439,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
   <a href="#features" onclick="closeMenu()">Features</a>
   <a href="#photos" onclick="closeMenu()">Photos</a>
   <a href="#serve" onclick="closeMenu()">Who We Serve</a>
+  <a href="#photos" onclick="closeMenu()">Photos</a>
   <a href="#location" onclick="closeMenu()">Location</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -501,6 +510,13 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
     <div class="tb"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>840 Grand Lake Rd, Sydney NS</div>
   </div>
 </div>
+
+<!-- BRAND BANNER -->
+<section class="brand-banner-section" aria-label="DOMTOR Storage promotional banner">
+  <div class="brand-banner-wrap">
+    <img src="Images/domtor-storage-banner.png" alt="DOMTOR Storage secure drive-up self storage in Sydney, Nova Scotia" class="brand-banner-img" loading="lazy">
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section id="howitworks">
@@ -822,7 +838,7 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
             <div class="fg"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith"></div>
           </div>
           <div class="fg"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="jane@email.com" required></div>
-          <div class="fg"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" placeholder="(902) 555-0123" required></div>
+          <div class="fg"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="(902) 555-0123 (optional)"></div>
           <div class="fg">
             <label for="unit">Unit Size of Interest</label>
             <select id="unit" name="unit_size">
