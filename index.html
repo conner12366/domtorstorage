@@ -344,9 +344,27 @@ footer{background:var(--nv);color:#fff;padding:48px 4% 32px}
 @media(min-width:900px){.nav-links{display:flex;align-items:center;list-style:none;gap:24px}.nav-links li a{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--dk2);letter-spacing:.01em;transition:color .2s}.nav-links li a:hover{color:var(--nv)}.nav-cta-d{display:inline-block;background:var(--gd);color:var(--nv);padding:9px 18px;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;transition:background .2s}.nav-cta-d:hover{background:var(--gdlt)}.hbg{display:none}.mob-bar{display:none}.h-btns{flex-direction:row}.hero-inner{grid-template-columns:1fr 1fr}.hero-cards{display:block}.hero-content{padding-bottom:80px}}
 @media(min-width:1100px){section{padding:96px 5%}.units-grid{grid-template-columns:repeat(4,1fr)}.feat-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:repeat(3,1fr)}.contact-layout{grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}.ft-top{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}.cl-services{grid-template-columns:repeat(4,1fr)}}
 @media(hover:hover){.unit-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:var(--nv)}.unit-card.feat:hover{transform:translateY(-3px)}}
+#pw-gate{position:fixed;inset:0;background:var(--nv);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+#pw-box{background:#fff;border-radius:10px;padding:40px 32px;width:100%;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.35)}
+#pw-box .pw-logo{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;letter-spacing:.06em;color:var(--nv);margin-bottom:4px}
+#pw-box .pw-sub{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:28px}
+#pw-box input[type=password]{width:100%;padding:13px 16px;border:2px solid var(--bd);border-radius:6px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;color:var(--dk);outline:none;box-sizing:border-box;transition:border-color .2s;margin-bottom:12px}
+#pw-box input[type=password]:focus{border-color:var(--nv)}
+#pw-box button{width:100%;padding:14px;background:var(--nv);color:#fff;border:none;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+#pw-box button:hover{background:var(--nvlt)}
+#pw-err{display:none;margin-top:12px;padding:10px 14px;background:#fdf0f0;border:1px solid #c0392b;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:#c0392b}
 </style>
 </head>
 <body>
+<div id="pw-gate">
+  <div id="pw-box">
+    <div class="pw-logo">DOMTOR</div>
+    <div class="pw-sub">Storage &mdash; Sydney NS</div>
+    <input type="password" id="pw-input" placeholder="Enter password" autocomplete="current-password">
+    <button id="pw-btn" onclick="checkPW()">Enter Site</button>
+    <div id="pw-err">Incorrect password. Please try again.</div>
+  </div>
+</div>
 <a href="#main-content" class="skip">Skip to main content</a>
 
 <!-- NAV -->
@@ -885,6 +903,21 @@ document.getElementById('storageForm').addEventListener('submit',async function(
     btn.textContent='Reserve a Unit';btn.disabled=false;
   }
 });
+</script>
+<script>
+function checkPW(){
+  var v=document.getElementById('pw-input').value;
+  var err=document.getElementById('pw-err');
+  if(v==='Mishka'){
+    document.getElementById('pw-gate').style.display='none';
+    err.style.display='none';
+  }else{
+    err.style.display='block';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').focus();
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPW();});
 </script>
 </body>
 </html>
